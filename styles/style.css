@@ -207,10 +207,6 @@
   cursor: pointer;
 }
 
-.card__like-button {
-  position: relative;
-}
-
 .card__icon-button {
   block-size: 38px;
   display: flex;
@@ -268,6 +264,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .animate-button::before {
