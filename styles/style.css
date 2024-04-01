@@ -168,6 +168,7 @@
   font-size: 14px;
   line-height: 14px;
   color: var(--accent-color, #000);
+  text-shadow: 0 0 1px var(--bg-color, #fff);
   opacity: 0.5;
   mix-blend-mode: hard-light;
   z-index: 1;
@@ -204,32 +205,32 @@
   border: none;
   appearance: none;
   cursor: pointer;
+}
+
+.card__like-button {
   position: relative;
 }
 
 .card__icon-button {
   block-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  outline: none;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
 
-.card__icon-button::after {
-  content: "";
-  display: block;
-  position: absolute;
-  inline-size: 100%;
-  block-size: 100%;
-  top: 0;
-  left: 0;
-  border: 2px solid var(--accent-color, #000);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 2;
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
 }
 
 .card__icon-button:focus,
 .card__like-button:focus {
   outline: none;
 }
-.card__icon-button:focus-visible::after {
+.card__icon-button:focus-visible::before {
   opacity: 1;
 }
 
@@ -412,6 +413,11 @@
 
   .card__title {
     padding: 3px 10px 5.5px;
+  }
+
+  .card__img-watermark {
+    inset-block-start: 23px;
+    inset-inline-end: 11px;
   }
 
   .card__content-wrapper {
